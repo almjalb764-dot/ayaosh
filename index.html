@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#260b16">
+<title>كل حب وانتي عيدي ❤️</title>
+<style>
+*{box-sizing:border-box}
+:root{--wine:#4a1025;--rose:#e9a8b7;--cream:#fff4e9}
+body{margin:0;min-height:100vh;color:#fff7f0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 50% 15%,#78233f 0,#3a1024 42%,#170812 100%);overflow-x:hidden}
+.wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px;position:relative}
+.glow{position:fixed;width:280px;height:280px;border-radius:50%;background:#f05b8b22;filter:blur(55px);top:10%;left:10%;pointer-events:none}
+h1{font-size:clamp(26px,7vw,40px);margin:0 0 10px;text-align:center;color:#ffe1e8;text-shadow:0 3px 18px #ff8ca855}
+.sub{color:#f5cbd5;text-align:center;margin:0 0 28px;font-size:15px}
+.envelope-area{width:min(88vw,370px);height:260px;display:grid;place-items:center;perspective:1000px;cursor:pointer;position:relative;z-index:2; -webkit-tap-highlight-color:transparent}
+.envelope{width:100%;height:210px;position:relative;background:#a83e5b;border-radius:8px;box-shadow:0 0 18px 5px #ff9bbd88,0 0 42px 12px #ff5f9380,0 18px 45px #08020888;transition:transform .7s;animation:envelopeGlow 2.4s ease-in-out infinite}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#c75b76,#8d2948);clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);border-radius:8px;z-index:3}
+.flap{position:absolute;inset:0;background:#d77990;clip-path:polygon(0 0,100% 0,50% 58%);transform-origin:top;transition:transform .8s;z-index:4;border-radius:8px}
+.seal{position:absolute;z-index:5;top:47%;left:50%;transform:translate(-50%,-50%);width:55px;height:55px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#ffb7c5,#a51e46 75%);box-shadow:0 4px 12px #4b071e88;font-size:27px;transition:opacity .3s}
+.front-note{position:absolute;z-index:6;bottom:17px;left:0;right:0;text-align:center;color:#ffe5e9;font-size:14px}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .seal{opacity:0}
+.envelope.open{transform:translateY(12px)}
+.hint{margin:8px 0 0;color:#f4cbd5;font-size:13px}
+.letter{display:none;width:min(94vw,680px);margin:24px auto 0;background:var(--cream);color:#512536;border-radius:5px;padding:clamp(20px,5vw,42px);box-shadow:0 18px 60px #0008;position:relative;z-index:7;line-height:2.05;white-space:pre-wrap;font-size:clamp(15px,3.8vw,18px);border:1px solid #e9c9bd}
+.letter:before{content:"";position:absolute;inset:9px;border:1px solid #d8aab0;pointer-events:none}
+.letter .date{font-weight:bold;text-align:center;color:#9b3d5b;margin-bottom:14px}
+.letter .body{position:relative;z-index:1}
+.letter.show{display:block;animation:rise .9s ease both}
+@keyframes envelopeGlow{0%,100%{filter:brightness(1);box-shadow:0 0 14px 4px #ff9bbd66,0 0 30px 8px #ff5f9366,0 18px 45px #08020888}50%{filter:brightness(1.18);box-shadow:0 0 25px 9px #ffd0dfcc,0 0 58px 18px #ff5f93aa,0 18px 45px #08020888}}
+@keyframes rise{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.heart{position:fixed;bottom:-30px;z-index:1;opacity:.0;animation:float 8s linear infinite;pointer-events:none}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.65}85%{opacity:.5}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+button{margin-top:18px;border:1px solid #f3bac8;background:#ffffff12;color:#ffe7ec;padding:11px 22px;border-radius:30px;font-size:14px;cursor:pointer}
+button:hover{background:#ffffff22}
+.footer{margin-top:26px;color:#dcaab8;font-size:12px;text-align:center}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<audio id="loveMusic" src="music.mp3" preload="auto" loop></audio>
+<div class="wrap">
+  <h1>كل حب وانتي عيدي ❤️</h1>
+  <p class="sub">في جواب صغير مستنيكي تفتحيه... 💌</p>
+  <div class="envelope-area" id="openArea" role="button" tabindex="0" aria-label="افتحي جواب الحب">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="seal">♥</div>
+      <div class="front-note">إلى أغلى الناس ❤️</div>
+    </div>
+  </div>
+  <div class="hint" id="hint">اضغطي على الجواب عشان تفتحي الرسالة</div>
+
+  <article class="letter" id="letter">
+    <div class="date">11/4/2026</div>
+    <div class="body">.
+
+كل حب وانتي عيدي
+
+هو انا مش مستني عيد حب عشان اكتبلك كلام حلو في يوم زي ده انتي من يوم ما دخلتي حياتي وانا حياتي بقيت معاكي حاجة تانيه وعايز اقولك مش محتاج اكتب بوست عيد حب لان مش يوم ده هحبك فيه بس انا السنه كلها بالنسبالي عيد حب وانتي معايا حبيب قلبي عشان انتي فيه مش بوست لحبيبي هو اللي هيبين غلاوتك عندي انتي كل حاجة ليا يا حبيبي وفره عيني انتي اجمل واحلى وأغلى حاجه ربنا رزقني بيها من يوم ما دخلتي حياتي كلها وانتي الحاجة اللي مينفعش تتعوض ولا في منها اتنين اللي زيك میتفارنس بعد اصلا لان اللي زيك قليل طبعا انتي عارف غلاوتك عندي قد اي لو قعدت اتكلم عنك مش في حقك اي كلام يتقال يكفيني انك عارفه انتي بنسبالي أي انتي اجمل واحلى حاجة حصلتلي في الدنيا كلها انتي اللي حياتي مفيهاش حلو غيرك اصلا محدش بيفر حتي غيرك انتي الروح اللي ساكنه في قلبي وعقلي أخر حاجة عايز اقولهالك ينور عيني انك أحلى صدقه في عمري كل عام وأنتي حبيبي وقلبي كل عيد حب وانتي سعادتي وضحكتي كل عيد حب وانتي مبسوطه دايما أكون السبب في سعادتك كل عيد حب انتي منور حياتي وعمري وتفضل نور عيني وحبيب عمري ويفرحنا يارب عن قريب شابي فلانتين داي يا روح قلبي يديمك في حياتي طول العمر كل سنه وانت معايا ي . نور عيني كل سنه واحنا مكملين مع بعض سنين العمر كلو لينا يحبيب عمري بحبك ي احلي حاجه حصلتلي في حياتي انتي بنسبالي لي حبيبتي واختي وصحبتي وامي وكل حاجه ليا في الدينا كلها ربنا يديمك في حياتي ينور عيني يارب ويخليكي ليا ومعايا ديما ينور عيني هابي فلانتين داي ينور عيني ؟؟؟؟؟؟</div>
+  </article>
+  <button id="again" style="display:none">اقفلي الجواب ❤️</button>
+  <div class="footer">اتعملت بكل الحب ❤️</div>
+</div>
+<script>
+const area=document.getElementById('openArea');
+const envelope=document.getElementById('envelope');
+const letter=document.getElementById('letter');
+const hint=document.getElementById('hint');
+const again=document.getElementById('again');
+function openLetter(){
+  const music=document.getElementById("loveMusic");
+  if(music.paused){music.volume=0.65; music.play().catch(()=>{});}
+  envelope.classList.add('open');
+  letter.classList.add('show');
+  hint.textContent='رسالة من القلب ❤️';
+  again.style.display='inline-block';
+  setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'start'}),350);
+}
+function closeLetter(){
+  envelope.classList.remove('open');
+  letter.classList.remove('show');
+  hint.textContent='اضغطي على الجواب عشان تفتحي الرسالة';
+  again.style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+area.addEventListener('click',openLetter);
+area.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter();}});
+again.addEventListener('click',closeLetter);
+for(let i=0;i<18;i++){
+ const h=document.createElement('div');h.className='heart';h.textContent=['♥','♡','❤'][i%3];
+ h.style.left=(Math.random()*100)+'%';h.style.fontSize=(14+Math.random()*22)+'px';
+ h.style.animationDelay=(Math.random()*8)+'s';h.style.animationDuration=(7+Math.random()*7)+'s';
+ h.style.color=i%2?'#f5a7bc':'#ffd5df';document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
